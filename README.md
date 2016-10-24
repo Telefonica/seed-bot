@@ -12,7 +12,7 @@ Run the following commands to clone the project, install its dependencies (**nod
 git clone git@pdihub.hi.inet:TDAF/seed-bot.git
 cd seed-bot
 
-export NPM_TOKEN=<your_npm_token>
+npm login # See note below
 npm install
 npm run dev
 ```
@@ -23,10 +23,7 @@ Now, you can type something to start talking with the bot. Just type:
 
 the bot will reply with the phrase `Note created: "Hello world!"`
 
-
-
-__Note: the NPM_TOKEN is needed to fetch private npm dependencies.
-You need to be a member of [npmjs.com/org/telefonica](https://www.npmjs.com/org/telefonica) and run `npm login`.__
+_Note: You need to be a member of [npmjs.com/org/telefonica](https://www.npmjs.com/org/telefonica)_
 
 ## Overall architecture
 
