@@ -23,7 +23,7 @@ Now, you can type something to start talking with the bot. Just type:
 
 the bot will reply with the phrase `Note created: "Hello world!"`
 
-_Note: You need to be a member of [npmjs.com/org/telefonica](https://www.npmjs.com/org/telefonica)_
+_Note: You need to be a member of [npmjs.com/org/telefonica](https://www.npmjs.com/org/telefonica). Ask tdaf@tid.es for access_
 
 ## Overall architecture
 
