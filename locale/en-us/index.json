@@ -1,0 +1,9 @@
+{
+    "core.default": [
+        "Sorry, I don't understant what you mean",
+        "Humm, not sure about what you mean"
+    ],
+    "core.cancel": [
+        "Good. I'm here if you need something else"
+    ]
+}
