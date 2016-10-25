@@ -26,7 +26,7 @@ let bot = new Bot({
     }
 });
 
-// Lets going to startup our server
+// Lets going to startup our bot
 let startup = new Startup();
 
 if (process.env.NODE_ENV === 'development') {
