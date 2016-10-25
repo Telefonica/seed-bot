@@ -17,7 +17,9 @@ let bot = new Bot({
     models: {
         'en-us': process.env.LUIS_MODEL
     },
-    plugins: [ path.join(__dirname, 'plugins', 'notes')],
+    plugins: [
+        path.join(__dirname, 'plugins', 'notes')
+    ],
     localizerSettings: {
         botLocalePath: path.join(__dirname, '..', 'locale'),
         defaultLocale: process.env.BOT_DEFAULT_LOCALE || 'en-us'
