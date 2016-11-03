@@ -2,7 +2,7 @@
   "name": "seed-bot",
   "version": "1.0.0",
   "private": true,
-  "description": "Seed project for a conversational robot for Telefonica",
+  "description": "Seed project for a conversational bot for Telefonica",
   "license": "UNLICENSED",
   "repository": "https://pdihub.hi.inet/TDAF/seed-bot",
   "author": "TDAF",
@@ -36,7 +36,7 @@
     "webdebug": "node --debug-brk lib/app.js"
   },
   "dependencies": {
-    "@telefonica/bot-core": "^1.7.0",
+    "@telefonica/bot-core": "^1.13.0",
     "dotenv": "^2.0.0"
   },
   "devDependencies": {

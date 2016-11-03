@@ -6,7 +6,7 @@ import { BotBuilder } from '@telefonica/bot-core';
 
 import noteCreate from './builtin.intent.note.create_note';
 
-// create a plugin
+// create a plugin, the id must be unique
 let plugin = new BotBuilder.Library('notes');
 
 // Add the dialogs, one by one, that this plugin can manage

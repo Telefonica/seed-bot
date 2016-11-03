@@ -14,19 +14,22 @@ import {
 
 // Create the bot
 let bot = new Bot({
-    models: { // The luis models to be consulted
-        'en-us': process.env.LUIS_MODEL
-    },
-    plugins: [ // The plugins to use
+    // The luis models to be consulted
+    modelMapSet: [
+        { 'en-us': process.env.LUIS_MODEL__CORTANA__EN_US }
+    ],
+    // The plugins to use
+    plugins: [
         path.join(__dirname, 'plugins', 'notes')
     ],
-    localizerSettings: { // language settings
+    // Language settings
+    localizerSettings: {
         botLocalePath: path.join(__dirname, '..', 'locale'),
         defaultLocale: process.env.BOT_DEFAULT_LOCALE || 'en-us'
     }
 });
 
-// Lets going to startup our bot
+// Lets go to startup our bot
 let startup = new Startup();
 
 if (process.env.NODE_ENV === 'development') {
@@ -36,8 +39,8 @@ if (process.env.NODE_ENV === 'development') {
     });
     startup.use(runner);
 } else {
-    // but in production, we publish a WebServer with the Micorosoft credentials 
-    // so it can be accessed by the MS BotFramework (MS Gateway) 
+    // but in production, we publish a WebServer with the Micorosoft credentials
+    // so it can be accessed by the MS BotFramework (MS Gateway)
     let runner = new BotServerRunner({
         bot,
         port: parseInt(process.env.BOT_PORT, 10) || 8080,

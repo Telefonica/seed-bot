@@ -1,10 +1,12 @@
 {
     "core.default": [
-        "Sorry, I don't understant what you mean",
-        "Humm, not sure about what you mean"
+        "Sorry, I don't understand what you mean",
+        "Humm, not sure about what you mean",
+        "I am not following, sorry"
     ],
     "core.cancel": [
-        "Good. I'm here if you need something else"
+        "Good. I'm here if you need something else",
+        "Ok. I'll be here if you need some help"
     ],
     "note.create_note": [
         "Note created: \"%s\""
