@@ -16,11 +16,7 @@ npm install
 npm run dev
 ```
 
-Now, you can type something to start talking with the bot. Just type:
-
-`Create a note with Hello world!`
-
-the bot will reply with the phrase `Note created: "Hello world!"`
+Now, you can type something to start talking with the bot. Just type "Create a note with Hello World".
 
 _Note: You need to be a member of [npmjs.com/org/telefonica](https://www.npmjs.com/org/telefonica). Ask tdaf@tid.es for access_
 

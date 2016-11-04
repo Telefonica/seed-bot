@@ -1,11 +1,29 @@
 import { BotBuilder } from '@telefonica/bot-core';
 
-// This intent is managed by this discrete steps 
+// This dialog is managed by this discrete steps
 export default [
-    createStep
+    createStep,
+    confirmCreation
 ];
 
-function createStep(session: BotBuilder.Session, args: any) {
+function createStep(session: BotBuilder.Session, args: any, next: Function) {
+    // Read the entity we are interested in
+    let entityNote = BotBuilder.EntityRecognizer.findEntity(args.entities, 'builtin.note.note_text');
+
+    // Keep the note as part of the dialog data
+    session.dialogData.note = entityNote.entity;
+
     // We reply to the user using our predefined i18n string (see /locale/en-us/index.json)
-    session.endDialog(session.gettext('note.create_note', args.entities[0].entity));
+    let message = session.gettext('note.confirm_note', session.dialogData.note);
+
+    // Use a confirmation prompt. Different kind of prompts are available.
+    BotBuilder.Prompts.confirm(session, message);
+}
+
+function confirmCreation(session: BotBuilder.Session, result: BotBuilder.IPromptConfirmResult, next: Function) {
+    if (result.response === true) {
+        session.endDialog('note.create_note');
+    } else {
+        session.endDialog('note.cancel_note');
+    }
 }

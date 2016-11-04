@@ -1,12 +1,12 @@
 /**
- * A plugin just exports a "library"" whose dialogs are the LUIS intents the plugin can understand
+ * A plugin just exports a "library" whose dialogs are the LUIS intents the plugin can understand
  */
 
 import { BotBuilder } from '@telefonica/bot-core';
 
 import noteCreate from './builtin.intent.note.create_note';
 
-// create a plugin, the id must be unique
+// create a plugin, the id must be unique in your bot
 let plugin = new BotBuilder.Library('notes');
 
 // Add the dialogs, one by one, that this plugin can manage
