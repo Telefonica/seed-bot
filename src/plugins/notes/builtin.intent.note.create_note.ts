@@ -11,13 +11,17 @@ function createStep(session: BotBuilder.Session, args: any, next: Function) {
     let entityNote = BotBuilder.EntityRecognizer.findEntity(args.entities, 'builtin.note.note_text');
 
     // Keep the note as part of the dialog data
-    session.dialogData.note = entityNote.entity;
+    if (entityNote) {
+        session.dialogData.note = entityNote.entity;
 
-    // We reply to the user using our predefined i18n string (see /locale/en-us/index.json)
-    let message = session.gettext('note.confirm_note', session.dialogData.note);
+        // We reply to the user using our predefined i18n string (see /locale/en-us/index.json)
+        let message = session.gettext('note.confirm_note', session.dialogData.note);
 
-    // Use a confirmation prompt. Different kind of prompts are available.
-    BotBuilder.Prompts.confirm(session, message);
+        // Use a confirmation prompt. Different kind of prompts are available.
+        BotBuilder.Prompts.confirm(session, message);
+    } else {
+        session.endDialog('I have not found any notes');
+    }
 }
 
 function confirmCreation(session: BotBuilder.Session, result: BotBuilder.IPromptConfirmResult, next: Function) {
