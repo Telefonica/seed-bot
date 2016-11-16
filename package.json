@@ -30,7 +30,7 @@
     "test": "# npm run build && mocha -R spec 'lib/**/*.spec.js'",
     "watch": "npm-run-all --parallel watch:*",
     "watch:ts": "tsc -w",
-    "watch:js": "nodemon --watch lib --exec 'LOGOPS_LEVEL=debug NODE_ENV=development node lib/app.js'",
+    "watch:js": "nodemon --watch lib --exec 'cross-env LOGOPS_LEVEL=debug NODE_ENV=development node lib/app.js'",
     "start": "NODE_ENV=production node lib/app.js",
     "debug": "node --debug-brk lib/app.js -c",
     "webdebug": "node --debug-brk lib/app.js"
@@ -47,6 +47,7 @@
     "@types/sinon": "^1.16.30",
     "@types/sinon-chai": "^2.7.27",
     "chai": "^3.5.0",
+    "cross-env": "^3.1.3",
     "mocha": "^3.0.2",
     "nodemon": "^1.9.2",
     "npm-run-all": "^3.1.0",

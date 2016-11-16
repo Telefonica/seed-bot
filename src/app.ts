@@ -4,13 +4,7 @@ import * as path from 'path';
 // Load configuration in process.env from the .env file
 dotenv.config();
 
-import {
-    Bot,
-    BotBuilder,
-    BotServerRunner,
-    BotConsoleRunner,
-    Startup
-} from '@telefonica/bot-core';
+import { Bot, BotBuilder, BotServerRunner, BotConsoleRunner, Startup } from '@telefonica/bot-core';
 
 // Create the bot
 let bot = new Bot({
@@ -33,7 +27,7 @@ let bot = new Bot({
 let startup = new Startup();
 
 if (process.env.NODE_ENV === 'development') {
-    // While in development, we interact with the bot using our terminal
+    // During development, we interact with the bot using our terminal
     let runner = new BotConsoleRunner({
         bot
     });
