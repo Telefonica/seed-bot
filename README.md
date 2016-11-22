@@ -11,14 +11,11 @@ Run the following commands to clone the project, install its dependencies (**nod
 git clone git@github.com/Telefonica/seed-bot.git
 cd seed-bot
 
-npm login # See note below
 npm install
 npm run dev
 ```
 
 Now, you can type something to start talking with the bot. Just type "Create a note with Hello World".
-
-_Note: You need to be a member of [npmjs.com/org/telefonica](https://www.npmjs.com/org/telefonica). Ask tdaf@tid.es for access_
 
 ## Overall architecture
 
