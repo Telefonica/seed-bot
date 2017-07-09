@@ -22,21 +22,22 @@
     "build": "npm run clean && npm run compile",
     "clean": "shx rm -fR ./lib",
     "compile": "tsc",
-    "dev": "npm run build && npm run watch",
+    "dev": "npm run build && npm run watch-console",
     "info": "npm-scripts-info",
     "lint": "tslint './src/**/*.ts'",
     "prepublish": "npm run build",
     "security": "nsp check",
     "test": "# npm run build && mocha -R spec 'lib/**/*.spec.js'",
     "watch": "npm-run-all --parallel watch:*",
+    "watch-console": "cross-env BOT_CONSOLE=1 npm run watch",
     "watch:ts": "tsc -w",
     "watch:js": "nodemon --watch lib --exec 'cross-env LOGOPS_LEVEL=debug NODE_ENV=development node lib/app.js'",
-    "start": "NODE_ENV=production node lib/app.js",
+    "start": "cross-env NODE_ENV=production node lib/app.js",
     "debug": "node --debug-brk lib/app.js -c",
     "webdebug": "node --debug-brk lib/app.js"
   },
   "dependencies": {
-    "@telefonica/bot-core": "^1.14.0",
+    "@telefonica/bot-core": "^1.18.0",
     "dotenv": "^2.0.0"
   },
   "devDependencies": {
